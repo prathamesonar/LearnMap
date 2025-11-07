@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root {
+    @apply h-full;
+  }
+  
+  body {
+    @apply bg-bg-darker text-text-primary antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+  }
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-800 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary;
+  }
+}
+
+
+.react-flow__node-default,
+.react-flow__node-input,
+.react-flow__node-output {
+  @apply !bg-transparent !border-none !shadow-none !p-0;
+}
+
+
+@media print {
+  /* Hide everything by default */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show the map wrapper and its children */
+  .printable-map-area, .printable-map-area * {
+    visibility: visible;
+  }
+
+  /* Position the map to fill the page */
+  .printable-map-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  /* Hide UI elements within the map area that we don't want */
+  .printable-map-area .map-header,
+  .printable-map-area .react-flow__controls,
+  .printable-map-area .react-flow__minimap,
+  .printable-map-area .react-flow__attribution {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  /* Ensure the flow wrapper and React Flow take up space */
+  .printable-map-area .flow-wrapper,
+  .printable-map-area .react-flow {
+    width: 100% !important;
+    height: 100% !important;
+    overflow: visible !important;
+  }
+  
+  /* Print-friendly node styles */
+  .custom-node {
+    background: #ffffff !important;
+    border: 1px solid #333 !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+  .node-title, .node-description, .node-meta {
+    color: #000 !important;
+  }
+  .node-description {
+     opacity: 1 !important;
+     max-height: none !important;
+  }
+  .react-flow__edge-path {
+    stroke: #333 !important;
+    opacity: 1 !important;
+  }
+}
