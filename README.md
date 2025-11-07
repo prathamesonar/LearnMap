@@ -1,7 +1,7 @@
 
 -----
 
-# LearnMap 
+# LearningMap 
 
 LearnMap is an intelligent learning path generator. Enter any topic you want to learn, select your skill level (Beginner, Intermediate, or Advanced), and let AI generate a customized, interactive mind map of your learning journey.
 
@@ -123,6 +123,15 @@ To run this project on your local machine, you will need to run both the `fronte
 * API keys for:
     * Google Gemini
     * Serper API
+
+ ### Installation
+
+  Clone the repository:
+    ```bash
+    git clone https://github.com/prathamesonar/LearningMap.git
+    cd LearningMap
+    ```
+
 
 ### 1. Backend Setup
 
