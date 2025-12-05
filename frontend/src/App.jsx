@@ -37,7 +37,6 @@ function App() {
 
     try {
       const data = await getLearningMap(topic, level);
-      
       if (!data.nodes || !data.edges) {
         throw new Error('Invalid response from server');
       }
